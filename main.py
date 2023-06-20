@@ -335,7 +335,7 @@ def calculate_Time_Difference(t1, t2):
     return (d1 - d2).seconds
 
 
-if __name__ == '__main__':
+    if __name__ == '__main__':
     # 获取accessToken
     accessToken = get_access_token()
     print('token', accessToken)
@@ -371,12 +371,12 @@ if __name__ == '__main__':
     #         elif reminderTime < nowTime:
     #             break
             # 通过睡眠定时
-            defference = calculate_Time_Difference(reminderTime, nowTime) - 3
-            print("课程推送时间差：", defference, "秒")
-            if defference > 0:
-                print("开始睡眠: 等待推送第", i + 1, "讲课")
-                time.sleep(defference)
-                print("结束睡眠")
+            # defference = calculate_Time_Difference(reminderTime, nowTime) - 3
+            # print("课程推送时间差：", defference, "秒")
+            # if defference > 0:
+            #     print("开始睡眠: 等待推送第", i + 1, "讲课")
+            #     time.sleep(defference)
+            #     print("结束睡眠")
     while True:
         goodNightTime = config.good_Night_Time
         nowTime = datetime.now().strftime('%H:%M:%S')
