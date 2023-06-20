@@ -49,41 +49,41 @@ def get_weather(province, city):
 
 
 # 获取今天是第几周，返回字符串
-def get_Today_Week():
-    y = config.year
-    m = config.month
-    d = config.day
-    startWeek = datetime(y, m, d)
-    today = datetime.today()
-    d_days = today - startWeek
-    trueWeek = (d_days.days // 7) + 1
-    return str(trueWeek)
+# def get_Today_Week():
+#     y = config.year
+#     m = config.month
+#     d = config.day
+#     startWeek = datetime(y, m, d)
+#     today = datetime.today()
+#     d_days = today - startWeek
+#     trueWeek = (d_days.days // 7) + 1
+#     return str(trueWeek)
 
 
 # 获取本周课程
-def get_Week_Classes(w):
-    if w is not None:
-        week_Class = config.classes.get(w)
-    else:
-        week = get_Today_Week()
-        week_Class = config.classes.get(week)
-    return week_Class
+# def get_Week_Classes(w):
+#     if w is not None:
+#         week_Class = config.classes.get(w)
+#     else:
+#         week = get_Today_Week()
+#         week_Class = config.classes.get(week)
+#     return week_Class
 
 
 # 获取今日课程
-def get_Today_Class():
-    year = localtime().tm_year
-    month = localtime().tm_mon
-    day = localtime().tm_mday
-    today = datetime.date(datetime(year=year, month=month, day=day))
-    todayClasses = get_Week_Classes()[today.weekday()]
-    return todayClasses
+# def get_Today_Class():
+#     year = localtime().tm_year
+#     month = localtime().tm_mon
+#     day = localtime().tm_mday
+#     today = datetime.date(datetime(year=year, month=month, day=day))
+#     todayClasses = get_Week_Classes()[today.weekday()]
+#     return todayClasses
 
 
 # 获取指定星期几的课程
-def get_Class(day):
-    theClasses = get_Week_Classes(None)[day]
-    return theClasses
+# def get_Class(day):
+#     theClasses = get_Week_Classes(None)[day]
+#     return theClasses
 
 
 # # 发送本周所有课程，周一的时候发
@@ -122,7 +122,7 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
     # 星期几
     week = week_list[today.weekday()]
     # 开学的第几周
-    weeks = get_Today_Week()
+    # weeks = get_Today_Week()
     # 获取在一起的日子的日期格式
     love_year = int(config.love_date.split("-")[0])
     love_month = int(config.love_date.split("-")[1])
@@ -185,30 +185,30 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
                 "value": birth_day,
                 "color": "#FF8000"
             },
-            "firstClass": {
-                "value": theClass[0],
-                "color": "#FF8000"
-            },
-            "secondClass": {
-                "value": theClass[1],
-                "color": "#FF8000"
-            },
-            "thirdClass": {
-                "value": theClass[2],
-                "color": "#FF8000"
-            },
-            "fourthClass": {
-                "value": theClass[3],
-                "color": "#FF8000"
-            },
-            "fifthClass": {
-                "value": theClass[4],
-                "color": "#FF8000"
-            },
-            "sixthClass": {
-                "value": theClass[5],
-                "color": "#FF8000"
-            }
+            # "firstClass": {
+            #     "value": theClass[0],
+            #     "color": "#FF8000"
+            # },
+            # "secondClass": {
+            #     "value": theClass[1],
+            #     "color": "#FF8000"
+            # },
+            # "thirdClass": {
+            #     "value": theClass[2],
+            #     "color": "#FF8000"
+            # },
+            # "fourthClass": {
+            #     "value": theClass[3],
+            #     "color": "#FF8000"
+            # },
+            # "fifthClass": {
+            #     "value": theClass[4],
+            #     "color": "#FF8000"
+            # },
+            # "sixthClass": {
+            #     "value": theClass[5],
+            #     "color": "#FF8000"
+            # }
         }
     }
     headers = {
@@ -221,33 +221,33 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
 
 
 # 发送课程消息
-def send_Class_Message(to_user, access_token, classInfo):
-    url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(access_token)
-    theuser = to_user[0]
-    data = {
-        "touser": theuser,
-        "template_id": config.template_id2,
-        "url": "http://weixin.qq.com/download",
-        "topcolor": "#FF0000",
-        "data": {
-            "classInfo": {
-                "value": classInfo,
-                "color": "#FF8000"
-            }
-        }
-    }
-    headers = {
-        'Content-Type': 'application/json',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-                      'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
-    }
-    response = post(url, headers=headers, json=data)
-    print(response.text)
+# def send_Class_Message(to_user, access_token, classInfo):
+#     url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(access_token)
+#     theuser = to_user[0]
+#     data = {
+#         "touser": theuser,
+#         "template_id": config.template_id2,
+#         "url": "http://weixin.qq.com/download",
+#         "topcolor": "#FF0000",
+#         "data": {
+#             "classInfo": {
+#                 "value": classInfo,
+#                 "color": "#FF8000"
+#             }
+#         }
+#     }
+#     headers = {
+#         'Content-Type': 'application/json',
+#         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+#                       'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
+#     }
+#     response = post(url, headers=headers, json=data)
+#     print(response.text)
 
 
 # 发送晚安心语及第二天课程
 def send_Good_Night(to_user, access_token):
-    week_list = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
+    # week_list = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
     headers = {
         'Content-Type': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
@@ -263,18 +263,18 @@ def send_Good_Night(to_user, access_token):
     good_Night = r.json()["newslist"][0]["content"]
     # good_Night = "晚安"
     # 获取第二天课表
-    year = localtime().tm_year
-    month = localtime().tm_mon
-    day = localtime().tm_mday
-    today = datetime.date(datetime(year=year, month=month, day=day))
-    weekClasses = get_Week_Classes(None)
-    week = week_list[(today.weekday() + 1) % 7]
-    theClass = []
-    if (today.weekday() + 1) % 7 == 0:
-        weekClasses = get_Week_Classes(get_Today_Week())
-        theClass = weekClasses[0]
-    else:
-        theClass = weekClasses[today.weekday() + 1]
+    # year = localtime().tm_year
+    # month = localtime().tm_mon
+    # day = localtime().tm_mday
+    # today = datetime.date(datetime(year=year, month=month, day=day))
+    # weekClasses = get_Week_Classes(None)
+    # week = week_list[(today.weekday() + 1) % 7]
+    # theClass = []
+    # if (today.weekday() + 1) % 7 == 0:
+    #     weekClasses = get_Week_Classes(get_Today_Week())
+    #     theClass = weekClasses[0]
+    # else:
+    #     theClass = weekClasses[today.weekday() + 1]
 
     url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(access_token)
     theuser = to_user[0]
@@ -288,34 +288,34 @@ def send_Good_Night(to_user, access_token):
                 "value": good_Night,
                 "color": "#87CEEB"
             },
-            "week": {
-                "value": week,
-                "color": "#00FFFF"
-            },
-            "firstClass": {
-                "value": theClass[0],
-                "color": "#FF8000"
-            },
-            "secondClass": {
-                "value": theClass[1],
-                "color": "#FF8000"
-            },
-            "thirdClass": {
-                "value": theClass[2],
-                "color": "#FF8000"
-            },
-            "fourthClass": {
-                "value": theClass[3],
-                "color": "#FF8000"
-            },
-            "fifthClass": {
-                "value": theClass[4],
-                "color": "#FF8000"
-            },
-            "sixthClass": {
-                "value": theClass[5],
-                "color": "#FF8000"
-            }
+            # "week": {
+            #     "value": week,
+            #     "color": "#00FFFF"
+            # },
+            # "firstClass": {
+            #     "value": theClass[0],
+            #     "color": "#FF8000"
+            # },
+            # "secondClass": {
+            #     "value": theClass[1],
+            #     "color": "#FF8000"
+            # },
+            # "thirdClass": {
+            #     "value": theClass[2],
+            #     "color": "#FF8000"
+            # },
+            # "fourthClass": {
+            #     "value": theClass[3],
+            #     "color": "#FF8000"
+            # },
+            # "fifthClass": {
+            #     "value": theClass[4],
+            #     "color": "#FF8000"
+            # },
+            # "sixthClass": {
+            #     "value": theClass[5],
+            #     "color": "#FF8000"
+            # }
         }
     }
     response = post(url, headers=headers, json=data)
