@@ -7,7 +7,7 @@ app_secret = "3ba3382a65aa114c03ae863beca4db7f"
 # 每日消息
 template_id1 = "Mw1M9hfgPkOCPkRNimvwGzBW1zT008sdJ3q5NbecyB4"
 # 课程消息,上课提醒
-# template_id2 = "loe1yHWr************************************"
+template_id2 = "loe1yHWr************************************"
 # 晚安心语
 template_id3 = "APt7Sl_lDXMEkYIMGf-jHstvLoVr3tWWetaUdXkcJwY"
 # 接收公众号消息的微信号
@@ -37,7 +37,7 @@ time_table = ["07:40:00", "09:40:00", "13:40:00", "15:40:00", "18:40:00"]
 # 课程时间
 course_Time = ["8:00--9:45", "10:00--11:45", "14:00--15:45", "16:00--17:45", "19:00--20:45"]
 # 晚安心语及第二天课程推送时间
-good_Night_Time = "22:55:00"
+good_Night_Time = "22:40:00"
 # 课程表 "1"代表第一周，依次类推，根据个人实际课表添加，有几周就添加几周,
 # 每一行代表一天, 例如  ['', '编译原理', '', '数据库原理及应用', '数据分析原理', '']  代表周一
 classes = \
