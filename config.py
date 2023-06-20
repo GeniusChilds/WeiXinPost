@@ -5,7 +5,7 @@ app_id = "wx36cbb2114a7850f4"
 app_secret = "3ba3382a65aa114c03ae863beca4db7f"
 # 模板消息id
 # 每日消息
-# template_id1 = "Mw1M9hfgPkOCPkRNimvwGzBW1zT008sdJ3q5NbecyB4"
+template_id1 = "Mw1M9hfgPkOCPkRNimvwGzBW1zT008sdJ3q5NbecyB4"
 # 课程消息,上课提醒
 template_id2 = "loe1yHWr************************************"
 # 晚安心语
@@ -31,7 +31,7 @@ year = 2022
 month = 8
 day = 29
 # 每日推送时间
-post_Time = "19:05:00"
+post_Time = "19:08:00"
 # 每节课提醒时间（有课才会提醒）, 时:分:秒  的形式, 字符串, 根据个人需要设置几次
 time_table = ["07:40:00", "09:40:00", "13:40:00", "15:40:00", "18:40:00"]
 # 课程时间
