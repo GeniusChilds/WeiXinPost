@@ -335,7 +335,7 @@ def calculate_Time_Difference(t1, t2):
     return (d1 - d2).seconds
 
 
-    if __name__ == '__main__':
+if __name__ == '__main__':
     # 获取accessToken
     accessToken = get_access_token()
     print('token', accessToken)
