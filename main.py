@@ -48,7 +48,7 @@ def get_weather(province, city):
     return weather, temp, tempn
 
 
-获取今天是第几周，返回字符串
+# 获取今天是第几周，返回字符串
 def get_Today_Week():
     y = config.year
     m = config.month
