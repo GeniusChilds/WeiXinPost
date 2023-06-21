@@ -12,7 +12,7 @@ template_id1 = "Mw1M9hfgPkOCPkRNimvwGzBW1zT008sdJ3q5NbecyB4"
 template_id3 = "APt7Sl_lDXMEkYIMGf-jHstvLoVr3tWWetaUdXkcJwY"
 # 接收公众号消息的微信号
 # 这是openid
-user = ["oYZrY6JfysQ8ppKWc4d33xyGQCvY"]
+user = ["oYZrY6JfysQ8ppKWc4d33xyGQCvY","oYZrY6BDfbv2wIBIW2aNBI6xsHRg"]
 
 # 信息配置
 # 所在省份
@@ -31,7 +31,7 @@ year = 2022
 month = 8
 day = 29
 # 每日推送时间
-post_Time = "07:40:00"
+post_Time = "07:30:00"
 # 每节课提醒时间（有课才会提醒）, 时:分:秒  的形式, 字符串, 根据个人需要设置几次
 # time_table = ["07:40:00", "09:40:00", "13:40:00", "15:40:00", "18:40:00"]
 # 课程时间
